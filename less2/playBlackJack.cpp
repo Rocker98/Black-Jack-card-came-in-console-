@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "playBlackJack.h"
 
-bool playGame(const std::array<Card, 52> &deck)
+Results playGame(const std::array<Card, 52> &deck)
 {
 	int yourScore = 0, dillerScore = 0;
 	char choice;
@@ -43,8 +43,10 @@ bool playGame(const std::array<Card, 52> &deck)
 				break;
 			}
 
-			return 0;
+			return Lose;
 		}
+		if (yourScore > 21)
+			break;							//test
 		else if (yourScore < 21)
 			break;
 	}
@@ -68,7 +70,7 @@ bool playGame(const std::array<Card, 52> &deck)
 				break;
 			}
 				std::cout << "You have " << yourScore << " and diller has " << dillerScore << std::endl;
-				return 1;
+				return Win;
 		}
 		if (dillerScore > 17 && dillerScore < 21)
 			break;
@@ -77,9 +79,12 @@ bool playGame(const std::array<Card, 52> &deck)
 
 	std::cout << "You have " << yourScore << " and diller has " << dillerScore << std::endl;
 
-	if(dillerScore>yourScore)
-	return false;
-	else return 1;
+	if (dillerScore > yourScore)
+		return Lose;
+	else if (dillerScore < yourScore)
+		return Win;
+	else 
+		return Draw;
 }
 
 

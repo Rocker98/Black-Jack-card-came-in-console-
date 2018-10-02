@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BlackJackResult.h" />
     <ClInclude Include="EnumCard.h" />
     <ClInclude Include="playBlackJack.h" />
     <ClInclude Include="startGame.h" />
