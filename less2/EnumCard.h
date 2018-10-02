@@ -1,7 +1,6 @@
 #pragma once
 
 
-
 enum CardRank
 {
 	RANK_2,
@@ -27,4 +26,9 @@ enum CardSuit
 	SUIT_CHERVU,
 	SUIT_PIKI,
 	MAX_SUITS
+};
+
+struct Card {
+	CardRank rank;
+	CardSuit suit;
 };
